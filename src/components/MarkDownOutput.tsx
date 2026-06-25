@@ -1,6 +1,7 @@
 import type React from "react";
 import ReactMarkDown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { introText } from "../utils/helper";
 
 export default function MarkDownOutput({ unFormattedText }: 
     {
@@ -11,15 +12,13 @@ export default function MarkDownOutput({ unFormattedText }:
     return (
         <>
             {
-                unFormattedText && (
-                    <div style={container}>
-                        <div className="markdown-container custom-scroll-container" style={markdownContainer}>
-                            <ReactMarkDown remarkPlugins={[remarkGfm]}>
-                                { unFormattedText }
-                            </ReactMarkDown>
-                        </div>   
-                    </div>
-                )
+                <div style={container}>
+                    <div className="markdown-container custom-scroll-container" style={markdownContainer}>
+                        <ReactMarkDown remarkPlugins={[remarkGfm]}>
+                            { unFormattedText || introText }
+                        </ReactMarkDown>
+                    </div>   
+                </div>
             }
         </>
     )
