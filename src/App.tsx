@@ -55,7 +55,7 @@ function App() {
   return (
     <>
 
-      <div className="header-section">
+      <div className="header-section" style={container}>
         <div className="brand">
           <img src={LogoImage} alt="" width="90" className='brand-logo' />
           <img 
@@ -66,27 +66,32 @@ function App() {
             style={brandName}
           />
         </div>
+        <form onSubmit={fetchHistory}>
+          <div className="container" style={{
+            display: "flex",
+            gap: "2rem",
+            alignItems: "center"
+          }}>
+            <input 
+              type="text"
+              value={searchedText}
+              onChange={(e) => setSearchedText(e.target.value)}
+              style={inputStyle}
+              placeholder="What's on your mind?"
+              required
+            /> 
+            <button 
+              type="submit" 
+              style={buttonStyle}
+              disabled={loading}
+            >
+              Search History <Telescope size={18} />
+            </button>
+          </div>
+        </form>
       </div>
 
-      <form onSubmit={fetchHistory}>
-        <div className="container" style={container}>
-          <input 
-            type="text"
-            value={searchedText}
-            onChange={(e) => setSearchedText(e.target.value)}
-            style={inputStyle}
-            placeholder="What's on your mind?"
-            required
-          /> 
-          <button 
-            type="submit" 
-            style={buttonStyle}
-            disabled={loading}
-          >
-            Search History <Telescope size={18} />
-          </button>
-        </div>
-      </form>
+      
 
       { message && (
         <>
@@ -143,7 +148,7 @@ const container = {
   display: "flex",
   justifyContent: "start",
   alignItems: "center",
-  gap: "2rem",
+  gap: "8rem",
   padding: "0 2rem"
 }
 
