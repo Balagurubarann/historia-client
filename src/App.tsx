@@ -3,7 +3,7 @@ import "@fontsource/poppins";
 import MarkDownOutput from './components/MarkDownOutput';
 import { Telescope } from "lucide-react";
 import './App.css';
-import LogoImage from "./assets/logo.svg";
+import LogoImage from "./assets/logo.png";
 import BrandNameImage from "./assets/brandname.png";
 
 function App() {
@@ -57,8 +57,14 @@ function App() {
 
       <div className="header-section">
         <div className="brand">
-          <img src={LogoImage} alt="" width="85" className='brand-logo' />
-          <img src={BrandNameImage} alt="" width="135" className='brand-name' />
+          <img src={LogoImage} alt="" width="90" className='brand-logo' />
+          <img 
+            src={BrandNameImage} 
+            alt="" 
+            width="135" 
+            className='brand-name'
+            style={brandName}
+          />
         </div>
       </div>
 
@@ -139,6 +145,11 @@ const container = {
   alignItems: "center",
   gap: "2rem",
   padding: "0 2rem"
+}
+
+const brandName = {
+  transform: "translateX(-23px)",
+  zIndex: "-1"
 }
 
 export default App;
