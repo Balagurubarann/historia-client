@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "@fontsource/roboto-mono";
+import "@fontsource/poppins";
 import MarkDownOutput from './components/MarkDownOutput';
 import { Telescope } from "lucide-react";
 import './App.css';
