@@ -1,0 +1,43 @@
+* {
+    margin: 0; padding: 0;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    font-family: "Poppins";
+}
+
+.custom-scroll-container {
+  overflow-y: auto;
+ /* Adjust height as needed */
+  padding-right: 8px; /* Prevents text from hiding under the thumb */
+
+  /* Firefox Support (Modern Standard) */
+  scrollbar-width: thin;
+  scrollbar-color: #1b1b1b #f1f1f1; /* thumb | track */
+}
+
+/* 1. Entire Scrollbar (Width & Height) */
+.custom-scroll-container::-webkit-scrollbar {
+  width: 10px;    /* Width of vertical scrollbar */
+  height: 10px;   /* Height of horizontal scrollbar */
+}
+
+/* 2. Track (The background path) */
+.custom-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+/* 3. Thumb (The draggable element) */
+.custom-scroll-container::-webkit-scrollbar-thumb {
+  background: #888888;
+  border-radius: 8px;
+  border: 2px solid #f1f1f1; /* Creates padding around the thumb */
+}
+
+/* 4. Thumb Hover State */
+.custom-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
