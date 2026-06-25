@@ -3,6 +3,8 @@ import "@fontsource/poppins";
 import MarkDownOutput from './components/MarkDownOutput';
 import { Telescope } from "lucide-react";
 import './App.css';
+import LogoImage from "./assets/logo.svg";
+import BrandNameImage from "./assets/brandname.png";
 
 function App() {
 
@@ -52,6 +54,13 @@ function App() {
 
   return (
     <>
+
+      <div className="header-section">
+        <div className="brand">
+          <img src={LogoImage} alt="" width="85" className='brand-logo' />
+          <img src={BrandNameImage} alt="" width="135" className='brand-name' />
+        </div>
+      </div>
 
       <form onSubmit={fetchHistory}>
         <div className="container" style={container}>

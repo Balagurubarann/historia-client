@@ -41,3 +41,8 @@ body {
 .custom-scroll-container::-webkit-scrollbar-thumb:hover {
   background: #555555;
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+}
